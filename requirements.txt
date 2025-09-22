@@ -1,0 +1,6 @@
+Django>=4.2,<5
+gunicorn
+psycopg2-binary
+# add your test libs e.g. selenium client, pytest, etc.
+selenium
+pytest

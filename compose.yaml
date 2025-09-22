@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # dev-friendly: override to run Django dev server so code changes on host reflect immediately
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - .:/app  # remove for production so image is immutable
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  # Selenium service (ready for your tests later)
+  selenium:
+    image: selenium/standalone-chrome:latest
+    # expose the webdriver port (4444) and optional VNC (5900)
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+    shm_size: "2g"
+    volumes:
+      - /dev/shm:/dev/shm
+    restart: on-failure
+
+volumes:
+  postgres_data:
