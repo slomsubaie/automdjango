@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-# default values (can come from .env)
+# default values (can come from kk)
 DB_HOST=${POSTGRES_HOST:-db}
 DB_PORT=${POSTGRES_PORT:-5432}
 DB_NAME=${POSTGRES_DB:-postgres}

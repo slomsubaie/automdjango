@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   web:
     build:
@@ -11,19 +9,22 @@ services:
       - .:/app  # remove for production so image is immutable
     ports:
       - "8000:8000"
+    environment:
+      - SELENIUM_REMOTE_URL=http://selenium:4444/wd/hub
     env_file:
-      - .env
+      - .env.example
     depends_on:
-      - db
+      - selenium
+#      - db
     restart: unless-stopped
 
-  db:
-    image: postgres:15
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    env_file:
-      - .env
-    restart: unless-stopped
+#  db:
+#    image: postgres:15
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    env_file:
+#      - .env.example
+#    restart: unless-stopped
 
   # Selenium service (ready for your tests later)
   selenium:
@@ -37,5 +38,5 @@ services:
       - /dev/shm:/dev/shm
     restart: on-failure
 
-volumes:
-  postgres_data:
+#volumes:
+#  postgres_data:

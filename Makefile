@@ -24,7 +24,7 @@ shell:
 	$(COMPOSE) run --rm web python manage.py shell
 
 test:
-	$(COMPOSE) run --rm web pytest
+	$(COMPOSE) run --rm web pytest 
 
 ps:
 	$(COMPOSE) ps

@@ -21,10 +21,10 @@ RUN pip install --upgrade pip \
 COPY . /app
 
 # make entrypoint executable
-RUN chmod +x /app/entrypoint.sh
+#RUN chmod +x /app/entrypoint.sh
 
 # entrypoint will run migrations/collectstatic and wait for DB
-ENTRYPOINT ["/app/entrypoint.sh"]
+#ENTRYPOINT ["/app/entrypoint.sh"]
 
 # Default CMD (overridden by compose during development)
 CMD ["gunicorn", "automdjango.wsgi:application", "--bind", "0.0.0.0:8000"]
