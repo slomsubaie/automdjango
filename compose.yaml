@@ -29,7 +29,7 @@ services:
   # Selenium service (ready for your tests later)
   selenium:
     image: selenium/standalone-chrome:latest
-    # expose the webdriver port (4444) and optional VNC (5900)
+    # expose the webdriver port (4444) and optional VNC (5900) password : 'secret'
     ports:
       - "4444:4444"
       - "5900:5900"

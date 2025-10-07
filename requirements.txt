@@ -6,6 +6,7 @@ selenium~=4.35.0
 pytest~=8.4.1
 allure-pytest==2.15.0
 allure-python-commons==2.15.0
+selenium-stealth~=1.0.6
 pip~=25.2
 typing_extensions~=4.14.1
 attrs~=25.3.0
