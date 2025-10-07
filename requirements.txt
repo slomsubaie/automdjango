@@ -1,0 +1,19 @@
+Django>=4.2,<5
+gunicorn
+psycopg2-binary~=2.9.10
+# add your test libs e.g. selenium client, pytest, etc.
+selenium~=4.35.0
+pytest~=8.4.1
+allure-pytest==2.15.0
+allure-python-commons==2.15.0
+selenium-stealth~=1.0.6
+pip~=25.2
+typing_extensions~=4.14.1
+attrs~=25.3.0
+PySocks~=1.7.1
+asgiref~=3.9.1
+sqlparse~=0.5.3
+colorama~=0.4.6
+requests~=2.32.5
+webdriver-manager~=4.0.2
+jproperties~=2.1.2
