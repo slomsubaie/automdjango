@@ -14,3 +14,7 @@ env/
 # IDE files
 .idea/
 .vscode/
+
+# Allure reports
+allure-reports/
+allure-results/
